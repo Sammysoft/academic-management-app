@@ -4,6 +4,8 @@ const port = process.env.PORT || 8089;
 app.use(express.static('public'));
 
 const student_controller = require('./routes/students-controller');
+
+const staff_controller = require('./routes/staff-controller');
 require('./model/staff-model');
 require('./model/student-model');
 app.listen(port, '0.0.0.0', ()=>{
@@ -12,3 +14,4 @@ app.listen(port, '0.0.0.0', ()=>{
 
 
 app.use('/', student_controller)
+app.use('/', staff_controller);
